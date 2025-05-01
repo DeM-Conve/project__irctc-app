@@ -1,0 +1,13 @@
+spring:
+  profiles:
+    active: native
+  application:
+    name: irctc-config
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/configurations
+
+server:
+  port: ${CONFIG_SERVICE_PORT:8888}

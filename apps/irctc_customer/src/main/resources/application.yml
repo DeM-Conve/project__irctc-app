@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: irctc-customer
+  config:
+    import: optional:configserver:http://${CONFIG_SERVICE_HOST:localhost}:${CONFIG_SERVICE_PORT:8888}
+  profiles:
+    active: dev

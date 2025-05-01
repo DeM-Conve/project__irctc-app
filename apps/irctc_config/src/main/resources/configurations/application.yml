@@ -1,0 +1,20 @@
+eureka:
+  instance:
+    hostname: ${DISCOVERY_SERVICE_HOST:localhost}
+    preferIpAddress: true
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${DISCOVERY_SERVICE_PORT:8761}/eureka/
+
+spring:
+  cloud:
+    config:
+      override-system-properties: false
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+  zipkin:
+    tracing:
+      endpoint: http://${TRACING_SERVICE_HOST:localhost}:${TRACING_SERVICE_PORT:9411}/api/v2/spans
