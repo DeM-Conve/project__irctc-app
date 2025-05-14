@@ -15,12 +15,15 @@
 
     <modules>
         <module>libs/irctc_common</module>
-        <module>apps/irctc_core</module>
+
+        <module>apps/irctc_api_gateway</module>
         <module>apps/irctc_config</module>
         <module>apps/irctc_discovery</module>
+
+        <module>apps/irctc_core</module>
         <module>apps/irctc_customer</module>
         <module>apps/irctc_notification_email</module>
-        <module>apps/irctc_api_gateway</module>
+        <module>apps/irctc_booking</module>
     </modules>
 
     <properties>

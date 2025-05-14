@@ -1,9 +1,9 @@
 Service Name	Responsibility
-event_core	Core event logic: event creation, schedule, venue management
-event_user	User service: profiles, preferences, login, JWT handling
+event_api_gateway	API Gateway (routes traffic, auth, rate limits)
 event_discovery	Eureka service discovery
 event_config	Spring Cloud Config for central configuration
-event_api_gateway	API Gateway (routes traffic, auth, rate limits)
+
+event_user	User service: profiles, preferences, login, JWT handling
 event_notification	Email/SMS/push notifications (Kafka-based consumers)
 event_booking	Ticket booking lifecycle: seat lock, confirm, cancel
 event_seat_service	Real-time seat map, availability, locking (Redis-backed)

@@ -1,0 +1,65 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://${POSTGRES_1_DB_HOST:localhost}:${POSTGRES_1_DB_PORT:5432}/${POSTGRES_1_DB_NAME:postgres}
+    username: ${POSTGRES_1_DB_USERNAME:admin}
+    password: ${POSTGRES_1_DB_PASSWORD:password}
+    hikari:
+      maximum-pool-size: 50
+      minimum-idle: 10
+  jpa:
+    hibernate:
+      ddl-auto: update
+  cache:
+    type: redis
+    cache-names: trainModule
+    redis:
+      time-to-live: 1m
+  data:
+    redis:
+      host: ${REDIS_1_HOST:localhost}
+      port: ${REDIS_1_PORT:6379}
+  kafka:
+    producer:
+      bootstrap-servers: http://${KAFKA_HOST:localhost}:${KAFKA_PORT:9092}
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        spring:
+          json:
+            type:
+              mapping: trainSeatBookingConfirmation:com.harshchauhan.irctc_booking.modules.trainSeatModule.dtos.TrainSeatBookingConfirmationDto
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: all
+  endpoint:
+    configprops:
+      show-values: ALWAYS
+    metrics:
+      access: read-only
+    health:
+      show-details: always
+    beans:
+      access: read-only
+
+logging:
+  level:
+    root: INFO
+
+external:
+  api:
+    posts:
+      url: https://jsonplaceholder.typicode.com
+
+eureka:
+  instance:
+    hostname: ${DISCOVERY_SERVICE_HOST:localhost}
+  client:
+    service-url:
+      defaultZone: http://${DISCOVERY_SERVICE_HOST:localhost}:${DISCOVERY_SERVICE_PORT:8761}/eureka/
+
+server:
+  port: ${IRCTC_BOOKING_SERVICE_HOST:9003}
