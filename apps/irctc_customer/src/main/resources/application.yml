@@ -5,3 +5,8 @@ spring:
     import: optional:configserver:http://${CONFIG_SERVICE_HOST:localhost}:${CONFIG_SERVICE_PORT:8888}
   profiles:
     active: dev
+
+grpc:
+  server:
+    port: 9090
+    enable-reflection: true

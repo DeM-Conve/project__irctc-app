@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package customer_details;
+
+option java_multiple_files = true;
+option java_package="com.harshchauhan.grpc.customer_details";
+option java_outer_classname="CustomerDetailsProto";
+
+service CustomerDetailsService {
+    rpc getCustomerPrimaryDetails(CustomerIdRequest) returns (CustomerPrimaryDataResponse);
+}
+
+message CustomerIdRequest {
+    string email = 1;
+}
+
+message CustomerPrimaryDataResponse {
+    string name = 1;
+    string email = 2;
+}
