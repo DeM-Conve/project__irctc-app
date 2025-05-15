@@ -1,4 +1,4 @@
-package com.harshchauhan.irctc_notification_email.email;
+package com.harshchauhan.irctc_notification_email.modules.email;
 
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import org.thymeleaf.context.Context;
 import org.thymeleaf.spring6.SpringTemplateEngine;
 
-import com.harshchauhan.irctc_notification_email.kafka.dto.TrainSeatBookingConfirmationDto;
+import com.harshchauhan.irctc_notification_email.common.dto.TrainSeatBookingConfirmationDto;
 
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;

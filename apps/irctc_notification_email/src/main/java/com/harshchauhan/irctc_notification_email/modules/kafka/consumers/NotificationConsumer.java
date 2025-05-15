@@ -1,10 +1,10 @@
-package com.harshchauhan.irctc_notification_email.kafka.consumers;
+package com.harshchauhan.irctc_notification_email.modules.kafka.consumers;
 
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 
-import com.harshchauhan.irctc_notification_email.email.EmailService;
-import com.harshchauhan.irctc_notification_email.kafka.dto.TrainSeatBookingConfirmationDto;
+import com.harshchauhan.irctc_notification_email.common.dto.TrainSeatBookingConfirmationDto;
+import com.harshchauhan.irctc_notification_email.modules.email.EmailService;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

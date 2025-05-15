@@ -1,4 +1,4 @@
-package com.harshchauhan.irctc_notification_email.email;
+package com.harshchauhan.irctc_notification_email.modules.email;
 
 import lombok.Getter;
 
